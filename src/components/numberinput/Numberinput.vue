@@ -1,5 +1,9 @@
 <template>
-    <div class="b-numberinput field" :class="fieldClasses">
+    <div
+        class="b-numberinput field"
+        v-bind="classAndStyle"
+        :class="fieldClasses"
+    >
         <p
             v-for="control in controlsLeft"
             :key="control"
@@ -251,6 +255,13 @@ export default {
             // On Vue 3, setting a boolean attribute `false` does not remove it,
             // `null` or `undefined` has to be given to remove it.
             return this.disabled || undefined
+        },
+
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

@@ -1,6 +1,7 @@
 <template>
     <div
         class="datepicker control"
+        v-bind="classAndStyle"
         :class="[size, {'is-expanded': expanded}]"
     >
         <b-dropdown
@@ -621,6 +622,13 @@ export default {
             // On Vue 3, setting a boolean attribute `false` does not remove it,
             // `null` or `undefined` has to be given to remove it.
             return this.disabled || undefined
+        },
+
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

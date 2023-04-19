@@ -1,5 +1,5 @@
 <template>
-    <li :role="ariaRoleMenu">
+    <li :role="ariaRoleMenu" v-bind="classAndStyle">
         <component
             :is="tag"
             v-bind="$attrs"
@@ -96,6 +96,12 @@ export default {
     computed: {
         ariaRoleMenu() {
             return this.ariaRole === 'menuitem' ? this.ariaRole : null
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

@@ -1,5 +1,6 @@
 <template>
     <li
+        v-bind="classAndStyle"
         :class="{ 'is-active': active }"
     >
         <component
@@ -28,6 +29,14 @@ export default {
             }
         },
         active: Boolean
+    },
+    computed: {
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
+        }
     }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
     <div
         class="control"
+        v-bind="classAndStyle"
         :class="{ 'is-expanded': expanded, 'has-icons-left': icon }"
     >
         <span class="select" :class="spanClasses">
@@ -87,6 +88,12 @@ export default {
                 'is-rounded': this.rounded,
                 'is-empty': this.selected === null
             }]
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

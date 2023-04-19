@@ -1,5 +1,9 @@
 <template>
-    <div class="b-clockpicker control" :class="[size, type, {'is-expanded': expanded}]">
+    <div
+        class="b-clockpicker control"
+        v-bind="classAndStyle"
+        :class="[size, type, {'is-expanded': expanded}]"
+    >
         <b-dropdown
             v-if="!isMobile || inline"
             ref="dropdown"
@@ -257,6 +261,12 @@ export default {
         },
         faceDisabledValues() {
             return this.isSelectingHour ? this.isHourDisabled : this.isMinuteDisabled
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     methods: {

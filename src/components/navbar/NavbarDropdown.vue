@@ -1,6 +1,7 @@
 <template>
     <div
         class="navbar-item has-dropdown"
+        v-bind="classAndStyle"
         :class="{
             'is-hoverable': isHoverable,
             'is-active': newActive
@@ -71,6 +72,14 @@ export default {
             newActive: this.active,
             isHoverable: this.hoverable,
             _isNavbarDropdown: true // Used internally by NavbarItem
+        }
+    },
+    computed: {
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

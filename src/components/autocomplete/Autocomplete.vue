@@ -1,5 +1,9 @@
 <template>
-    <div class="autocomplete control" :class="{ 'is-expanded': expanded }">
+    <div
+        class="autocomplete control"
+        v-bind="classAndStyle"
+        :class="{ 'is-expanded': expanded }"
+    >
         <b-input
             v-model="newValue"
             ref="input"
@@ -314,6 +318,13 @@ export default {
         contentStyle() {
             return {
                 maxHeight: toCssWidth(this.maxHeight)
+            }
+        },
+
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
             }
         }
     },

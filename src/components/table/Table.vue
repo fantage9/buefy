@@ -1,5 +1,5 @@
 <template>
-    <div class="b-table">
+    <div class="b-table" v-bind="classAndStyle">
         <slot />
 
         <b-table-mobile-sort
@@ -815,6 +815,12 @@ export default {
         },
         canDragColumn() {
             return this.draggableColumn && !this.isDraggingRow
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

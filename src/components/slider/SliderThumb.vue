@@ -1,6 +1,7 @@
 <template>
     <div
         class="b-slider-thumb-wrapper"
+        v-bind="classAndStyle"
         :class="{ 'is-dragging': dragging, 'has-indicator': indicator}"
         :style="wrapperStyle"
     >
@@ -128,6 +129,12 @@ export default {
             }
 
             return new Intl.NumberFormat(this.locale).format(this.modelValue)
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     methods: {

@@ -1,6 +1,7 @@
 <template>
     <div
         class="colorpicker control"
+        v-bind="classAndStyle"
         :class="[size, {'is-expanded': expanded}]"
     >
         <b-dropdown
@@ -262,6 +263,13 @@ export default {
                 return 'dialog'
             } else {
                 return undefined
+            }
+        },
+
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
             }
         }
     },

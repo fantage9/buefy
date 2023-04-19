@@ -1,6 +1,7 @@
 <template>
     <div
         class="control"
+        v-bind="classAndStyle"
         :class="rootClasses"
     >
         <input
@@ -219,6 +220,12 @@ export default {
                 return this.computedValue.toString().length
             }
             return 0
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
+            }
         }
     },
     watch: {

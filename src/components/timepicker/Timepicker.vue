@@ -1,5 +1,9 @@
 <template>
-    <div class="timepicker control" :class="[size, {'is-expanded': expanded}]">
+    <div
+        class="timepicker control"
+        v-bind="classAndStyle"
+        :class="[size, {'is-expanded': expanded}]"
+    >
         <b-dropdown
             v-if="!isMobile || inline"
             ref="dropdown"
@@ -172,6 +176,12 @@ export default {
                 return '1'
             } else {
                 return undefined
+            }
+        },
+        classAndStyle() {
+            return {
+                class: this.$attrs.class,
+                style: this.$attrs.style
             }
         }
     }

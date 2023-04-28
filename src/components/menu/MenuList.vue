@@ -10,7 +10,7 @@ const BMenuList = (props, context) => {
             { class: 'menu-label' },
             props.label
                 ? props.icon
-                    ? [
+                    ? () => [
                         createElement(resolveComponent('b-icon'), {
                             icon: props.icon,
                             pack: props.iconPack,

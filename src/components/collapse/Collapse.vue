@@ -67,7 +67,7 @@ export default {
             createElement(
                 Transition,
                 { name: this.animation },
-                [
+                () => [
                     createElement(
                         'div',
                         {

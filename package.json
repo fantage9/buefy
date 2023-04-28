@@ -1,12 +1,13 @@
 {
-  "name": "buefy",
-  "version": "0.9.21",
+  "name": "@fantage9/buefy-vue3",
+  "version": "0.9.21-alpha.006",
   "homepage": "https://buefy.org",
   "description": "Lightweight UI components for Vue.js (v3) based on Bulma",
   "author": "Rafael Beraldo <rafael.pimpa@gmail.com>",
   "maintainers": [
     "Walter Tommasi <tommsi20@gmail.com>",
-    "Kikuo Emoto <kemoto@codemonger.io>"
+    "Kikuo Emoto <kemoto@codemonger.io>",
+    "Jacob Koo <fantage9@gmail.com>"
   ],
   "license": "MIT",
   "main": "dist/cjs/index.js",
@@ -34,8 +35,8 @@
     "attributes": "dist/vetur/attributes.json"
   },
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "dev": "node --openssl-legacy-provider build/dev-server.js",
+    "start": "node --openssl-legacy-provider build/dev-server.js",
     "lint": "eslint --ext .js,.vue src docs",
     "lint:fix": "eslint --ext .js,.vue src docs --fix",
     "lint:staged": "lint-staged",
@@ -52,7 +53,8 @@
     "build": "npm run build:lib && npm run build:docs",
     "cov": "./node_modules/codcov/bin/codcov",
     "vetur": "node -r esm build/vetur.js",
-    "prepare": "npm run build:lib"
+    "prepare": "npm run build:lib",
+    "publish:npm": "npm publish --access=public"
   },
   "keywords": [
     "bulma",

@@ -171,7 +171,7 @@ export default {
             return createElement(
                 'div',
                 { class: 'navbar-brand' },
-                [this.$slots.brand(), this.genBurgerNode()]
+                () => [this.$slots.brand(), this.genBurgerNode()]
             )
         },
         genBurgerNode() {
@@ -201,7 +201,7 @@ export default {
             return createElement(
                 'div',
                 { class: ['navbar-menu', { 'is-active': this.isOpened }] },
-                [
+                () => [
                     this.genMenuPosition('start'),
                     this.genMenuPosition('end')
                 ]
@@ -213,7 +213,7 @@ export default {
                 { class: `navbar-${positionName}` },
                 this.$slots[positionName] != null
                     ? this.$slots[positionName]()
-                    : []
+                    : () => []
             )
         },
         setBodyFixedTopClass(isSet) {

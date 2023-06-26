@@ -37,7 +37,7 @@
                 ref="autocomplete"
                 v-if="hasInput"
                 v-model="newTag"
-                v-bind="$attrs"
+                v-bind="attrs"
                 :data="data"
                 :field="field"
                 :icon="icon"
@@ -113,6 +113,7 @@ import Tag from '../tag/Tag'
 import Autocomplete from '../autocomplete/Autocomplete'
 import config from '../../utils/config'
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BTaginput',
@@ -120,7 +121,7 @@ export default {
         [Autocomplete.name]: Autocomplete,
         [Tag.name]: Tag
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: {
@@ -278,12 +279,6 @@ export default {
             // On Vue 3, setting a boolean attribute `false` does not remove it.
             // `null` or `undefined` has to be given to remove it.
             return this.disabled || undefined
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

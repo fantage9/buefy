@@ -28,7 +28,7 @@
                         :disabled="disabledOrUndefined"
                         :readonly="!editable"
                         :rounded="rounded"
-                        v-bind="$attrs"
+                        v-bind="attrs"
                         :use-html5-validation="useHtml5Validation"
                         @click="onInputClick"
                         @keyup.enter="toggle(true)"
@@ -155,7 +155,7 @@
             :min="formatHHMMSS(minTime)"
             :disabled="disabledOrUndefined"
             :readonly="false"
-            v-bind="$attrs"
+            v-bind="attrs"
             :use-html5-validation="useHtml5Validation"
             @click.stop="toggle(true)"
             @keyup.enter="toggle(true)"
@@ -168,6 +168,7 @@
 
 <script>
 import TimepickerMixin from '../../utils/TimepickerMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import config from '../../utils/config'
 
 import Dropdown from '../dropdown/Dropdown'
@@ -190,7 +191,7 @@ export default {
         [Dropdown.name]: Dropdown,
         [DropdownItem.name]: DropdownItem
     },
-    mixins: [TimepickerMixin],
+    mixins: [TimepickerMixin, AttrsMixin],
     props: {
         pickerSize: {
             type: Number,
@@ -261,12 +262,6 @@ export default {
         },
         faceDisabledValues() {
             return this.isSelectingHour ? this.isHourDisabled : this.isMinuteDisabled
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     methods: {

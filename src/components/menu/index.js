@@ -7,7 +7,8 @@ import { use, registerComponent } from '../../utils/plugins'
 const Plugin = {
     install(Vue) {
         registerComponent(Vue, Menu)
-        registerComponent(Vue, MenuList)
+        // registerComponent(Vue, MenuList)
+        Vue.component('BMenuList', MenuList)
         registerComponent(Vue, MenuItem)
     }
 }

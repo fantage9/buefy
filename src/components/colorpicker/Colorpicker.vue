@@ -98,6 +98,7 @@
 
 <script>
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import { isMobile } from '../../utils/helpers'
 import config from '../../utils/config'
 import Color from '../../utils/color'
@@ -138,7 +139,7 @@ export default {
         [Dropdown.name]: Dropdown,
         [DropdownItem.name]: DropdownItem
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     provide() {
         return {
@@ -263,13 +264,6 @@ export default {
                 return 'dialog'
             } else {
                 return undefined
-            }
-        },
-
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
             }
         }
     },

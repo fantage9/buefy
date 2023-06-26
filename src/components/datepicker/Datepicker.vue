@@ -33,7 +33,7 @@
                         :loading="loading"
                         :disabled="disabledOrUndefined"
                         :readonly="!editable"
-                        v-bind="$attrs"
+                        v-bind="attrs"
                         :use-html5-validation="false"
                         @click="onInputClick"
                         @icon-right-click="$emit('icon-right-click', $event)"
@@ -217,7 +217,7 @@
             :min="formatNative(minDate)"
             :disabled="disabledOrUndefined"
             :readonly="false"
-            v-bind="$attrs"
+            v-bind="attrs"
             :use-html5-validation="false"
             @change="onChangeNativePicker"
             @focus="onFocus"
@@ -228,6 +228,7 @@
 
 <script>
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import { isMobile, getMonthNames, getWeekdayNames, matchWithGroups } from '../../utils/helpers'
 import config from '../../utils/config'
 
@@ -300,7 +301,7 @@ export default {
         [Dropdown.name]: Dropdown,
         [DropdownItem.name]: DropdownItem
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     provide() {
         return {
@@ -622,13 +623,6 @@ export default {
             // On Vue 3, setting a boolean attribute `false` does not remove it,
             // `null` or `undefined` has to be given to remove it.
             return this.disabled || undefined
-        },
-
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

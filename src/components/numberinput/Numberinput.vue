@@ -41,7 +41,7 @@
             type="number"
             ref="input"
             v-model="computedValue"
-            v-bind="$attrs"
+            v-bind="attrs"
             :step="minStepNumber"
             :max="max"
             :min="min"
@@ -100,6 +100,7 @@
 import Icon from '../icon/Icon'
 import Input from '../input/Input'
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BNumberinput',
@@ -107,7 +108,7 @@ export default {
         [Icon.name]: Icon,
         [Input.name]: Input
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     inject: {
         field: {
@@ -255,13 +256,6 @@ export default {
             // On Vue 3, setting a boolean attribute `false` does not remove it,
             // `null` or `undefined` has to be given to remove it.
             return this.disabled || undefined
-        },
-
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

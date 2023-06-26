@@ -63,7 +63,7 @@
 
 <script>
 import config from '../../utils/config'
-import { isTag } from '../../utils/helpers'
+import { isTag, isFragment } from '../../utils/helpers'
 import FieldBody from './FieldBody'
 
 export default {
@@ -239,7 +239,20 @@ export default {
         hasAddons() {
             let renderedNode = 0
             if (this.$slots.default) {
-                renderedNode = this.$slots.default().reduce((i, node) => isTag(node) ? i + 1 : i, 0)
+                renderedNode = this.$slots.default().reduce((i, node) => {
+                    // consider v-for Fragment
+                    if (isFragment(node)) {
+                        if (node.children && node.children.length > 0) {
+                            const childNodes = node.children.filter((child) => isTag(child))
+
+                            return i + childNodes.length
+                        } else {
+                            return i
+                        }
+                    } else {
+                        return isTag(node) ? i + 1 : i
+                    }
+                }, 0)
             }
             return (
                 renderedNode > 1 &&

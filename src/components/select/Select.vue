@@ -11,7 +11,7 @@
                 ref="select"
                 :multiple="multiple"
                 :size="nativeSize"
-                v-bind="$attrs"
+                v-bind="attrs"
                 @blur="$emit('blur', $event) && checkHtml5Validity()"
                 @focus="$emit('focus', $event)"
             >
@@ -45,13 +45,14 @@
 <script>
 import Icon from '../icon/Icon'
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BSelect',
     components: {
         [Icon.name]: Icon
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: {
@@ -88,12 +89,6 @@ export default {
                 'is-rounded': this.rounded,
                 'is-empty': this.selected === null
             }]
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

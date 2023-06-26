@@ -14,7 +14,7 @@
             <div
                 class="b-slider-thumb"
                 :tabindex="disabled ? false : 0"
-                v-bind="$attrs"
+                v-bind="attrs"
                 @mousedown="onButtonDown"
                 @touchstart="onButtonDown"
                 @focus="onFocus"
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import AttrsMixin from '../../utils/AttrsMixin'
 import Tooltip from '../tooltip/Tooltip'
 import config from '../../utils/config'
 
@@ -41,6 +42,7 @@ export default {
     components: {
         [Tooltip.name]: Tooltip
     },
+    mixins: [AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: {
@@ -129,12 +131,6 @@ export default {
             }
 
             return new Intl.NumberFormat(this.locale).format(this.modelValue)
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     methods: {

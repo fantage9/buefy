@@ -5,7 +5,7 @@
     >
         <component
             :is="tag"
-            v-bind="$attrs"
+            v-bind="attrs"
         >
             <slot />
         </component>
@@ -14,13 +14,12 @@
 
 <script>
 import config from '../../utils/config'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
-
     name: 'BBreadcrumbItem',
-
+    mixins: [AttrsMixin],
     inheritAttrs: false,
-
     props: {
         tag: {
             type: String,
@@ -29,14 +28,6 @@ export default {
             }
         },
         active: Boolean
-    },
-    computed: {
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
-        }
     }
 }
 </script>

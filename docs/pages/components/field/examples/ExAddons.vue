@@ -1,5 +1,12 @@
 <template>
     <section>
+        <b-field label="for test">
+            <b-input v-for="item in [0, 1, 2, 3]" :key="item" :placeholder="item"></b-input>
+        </b-field>
+        <b-field label="for test">
+            <b-input v-for="item in [0]" :key="item" :placeholder="item"></b-input>
+            <b-input placeholder="etc"></b-input>
+        </b-field>
         <b-field message="What do you want to search?">
             <b-input placeholder="Search..."
                 type="search"

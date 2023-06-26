@@ -22,7 +22,7 @@
         >
             <slot name="pagination">
                 <b-table-pagination
-                    v-bind="$attrs"
+                    v-bind="attrs"
                     :per-page="perPage"
                     :paginated="paginated"
                     :rounded="paginationRounded"
@@ -381,7 +381,7 @@
         >
             <slot name="pagination">
                 <b-table-pagination
-                    v-bind="$attrs"
+                    v-bind="attrs"
                     :per-page="perPage"
                     :paginated="paginated"
                     :rounded="paginationRounded"
@@ -417,6 +417,7 @@ import TableMobileSort from './TableMobileSort'
 import TableColumn from './TableColumn'
 import TablePagination from './TablePagination'
 import mockTableColumn from './mockTableColumn'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BTable',
@@ -430,6 +431,7 @@ export default {
         [TableColumn.name]: TableColumn,
         [TablePagination.name]: TablePagination
     },
+    mixins: [AttrsMixin],
     inheritAttrs: false,
     provide() {
         return {
@@ -815,12 +817,6 @@ export default {
         },
         canDragColumn() {
             return this.draggableColumn && !this.isDraggingRow
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

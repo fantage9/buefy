@@ -28,7 +28,7 @@
                         :disabled="disabledOrUndefined"
                         :readonly="!editable || undefined"
                         :rounded="rounded"
-                        v-bind="$attrs"
+                        v-bind="attrs"
                         :use-html5-validation="useHtml5Validation"
                         @keyup.enter="toggle(true)"
                         @change="onChange($event.target.value)"
@@ -135,7 +135,7 @@
             :min="formatHHMMSS(minTime)"
             :disabled="disabledOrUndefined"
             :readonly="false"
-            v-bind="$attrs"
+            v-bind="attrs"
             :use-html5-validation="useHtml5Validation"
             @change="onChange($event.target.value)"
             @focus="handleOnFocus"
@@ -146,6 +146,7 @@
 
 <script>
 import TimepickerMixin from '../../utils/TimepickerMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import Dropdown from '../dropdown/Dropdown'
 import DropdownItem from '../dropdown/DropdownItem'
 import Input from '../input/Input'
@@ -163,7 +164,7 @@ export default {
         [Dropdown.name]: Dropdown,
         [DropdownItem.name]: DropdownItem
     },
-    mixins: [TimepickerMixin],
+    mixins: [TimepickerMixin, AttrsMixin],
     inheritAttrs: false,
     data() {
         return {
@@ -176,12 +177,6 @@ export default {
                 return '1'
             } else {
                 return undefined
-            }
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
             }
         }
     }

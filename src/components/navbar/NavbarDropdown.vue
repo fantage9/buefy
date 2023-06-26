@@ -16,7 +16,7 @@
                 'is-arrowless': arrowless,
                 'is-active': newActive && collapsible
             }"
-            v-bind="$attrs"
+            v-bind="attrs"
             aria-haspopup="true"
             @click.prevent="toggleMenu"
             @keyup.enter="toggleMenu"
@@ -42,12 +42,14 @@
 
 <script>
 import clickOutside from '../../directives/clickOutside'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BNavbarDropdown',
     directives: {
         clickOutside
     },
+    mixins: [AttrsMixin],
     inheritAttrs: false,
     props: {
         label: String,
@@ -72,14 +74,6 @@ export default {
             newActive: this.active,
             isHoverable: this.hoverable,
             _isNavbarDropdown: true // Used internally by NavbarItem
-        }
-    },
-    computed: {
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

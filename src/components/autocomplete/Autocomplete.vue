@@ -19,7 +19,7 @@
             :autocomplete="newAutocomplete"
             :use-html5-validation="false"
             :aria-autocomplete="ariaAutocomplete"
-            v-bind="$attrs"
+            v-bind="attrs"
             @update:model-value="onInput"
             @focus="focused"
             @blur="onBlur"
@@ -119,6 +119,7 @@ import {
     toCssWidth
 } from '../../utils/helpers'
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import Input from '../input/Input'
 
 export default {
@@ -126,7 +127,7 @@ export default {
     components: {
         [Input.name]: Input
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: [Number, String],
@@ -318,13 +319,6 @@ export default {
         contentStyle() {
             return {
                 maxHeight: toCssWidth(this.maxHeight)
-            }
-        },
-
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
             }
         }
     },

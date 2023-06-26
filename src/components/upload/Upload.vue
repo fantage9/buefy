@@ -28,7 +28,7 @@
         <input
             ref="input"
             type="file"
-            v-bind="$attrs"
+            v-bind="attrs"
             :multiple="multiple"
             :accept="accept"
             :disabled="disabledOrUndefined"
@@ -39,11 +39,12 @@
 
 <script>
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 import { File } from '../../utils/ssr'
 
 export default {
     name: 'BUpload',
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: {
@@ -79,12 +80,6 @@ export default {
         }
     },
     computed: {
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
-        },
         disabledOrUndefined() {
             // On Vue 3, setting a boolean attribute `false` does not remove it,
             // `true` or `undefined` has to be given to remove it.

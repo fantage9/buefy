@@ -2,7 +2,7 @@
     <li :role="ariaRoleMenu" v-bind="classAndStyle">
         <component
             :is="tag"
-            v-bind="$attrs"
+            v-bind="attrs"
             :class="{
                 'is-active': newActive,
                 'is-expanded': newExpanded,
@@ -40,13 +40,14 @@
 import Icon from '../icon/Icon'
 import config from '../../utils/config'
 import MenuItemContainerMixin from './MenuItemContainerMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BMenuItem',
     components: {
         [Icon.name]: Icon
     },
-    mixins: [MenuItemContainerMixin],
+    mixins: [MenuItemContainerMixin, AttrsMixin],
     inject: {
         parent: {
             from: 'BMenuItemContainer',
@@ -96,12 +97,6 @@ export default {
     computed: {
         ariaRoleMenu() {
             return this.ariaRole === 'menuitem' ? this.ariaRole : null
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

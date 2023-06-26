@@ -13,7 +13,7 @@
             :autocomplete="newAutocomplete"
             :maxlength="maxlength"
             :value="computedValue"
-            v-bind="$attrs"
+            v-bind="attrs"
             @input="onInput"
             @change="onChange"
             @blur="onBlur"
@@ -27,7 +27,7 @@
             :class="[inputClasses, customClass]"
             :maxlength="maxlength"
             :value="computedValue"
-            v-bind="$attrs"
+            v-bind="attrs"
             @input="onInput"
             @change="onChange"
             @blur="onBlur"
@@ -70,13 +70,14 @@
 import Icon from '../icon/Icon'
 import config from '../../utils/config'
 import FormElementMixin from '../../utils/FormElementMixin'
+import AttrsMixin from '../../utils/AttrsMixin'
 
 export default {
     name: 'BInput',
     components: {
         [Icon.name]: Icon
     },
-    mixins: [FormElementMixin],
+    mixins: [FormElementMixin, AttrsMixin],
     inheritAttrs: false,
     props: {
         modelValue: [Number, String],
@@ -220,12 +221,6 @@ export default {
                 return this.computedValue.toString().length
             }
             return 0
-        },
-        classAndStyle() {
-            return {
-                class: this.$attrs.class,
-                style: this.$attrs.style
-            }
         }
     },
     watch: {

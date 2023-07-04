@@ -20,6 +20,7 @@
             :use-html5-validation="false"
             :aria-autocomplete="ariaAutocomplete"
             v-bind="attrs"
+            :attrs-deep="attrsDeep"
             @update:model-value="onInput"
             @focus="focused"
             @blur="onBlur"

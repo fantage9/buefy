@@ -38,6 +38,7 @@
                 v-if="hasInput"
                 v-model="newTag"
                 v-bind="attrs"
+                :attrs-deep="attrsDeep"
                 :data="data"
                 :field="field"
                 :icon="icon"

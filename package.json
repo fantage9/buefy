@@ -1,6 +1,6 @@
 {
   "name": "@fantage9/buefy-vue3",
-  "version": "0.9.21-alpha.9",
+  "version": "0.9.21-alpha.10",
   "homepage": "https://buefy.org",
   "description": "Lightweight UI components for Vue.js (v3) based on Bulma",
   "author": "Rafael Beraldo <rafael.pimpa@gmail.com>",
@@ -54,7 +54,9 @@
     "cov": "./node_modules/codcov/bin/codcov",
     "vetur": "node -r esm build/vetur.js",
     "prepare": "npm run build:lib",
-    "publish:npm": "npm publish --access=public"
+    "publish:npm": "npm publish --access=public",
+    "-----------": "------------",
+    "build:publish": "npm run build:lib && npm run publish:npm"
   },
   "keywords": [
     "bulma",

@@ -42,6 +42,7 @@
             ref="input"
             v-model="computedValue"
             v-bind="attrs"
+            :attrs-deep="attrsDeep"
             :step="minStepNumber"
             :max="max"
             :min="min"

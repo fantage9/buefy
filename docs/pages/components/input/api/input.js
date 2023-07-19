@@ -123,7 +123,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when value is changed',
                 parameters: '<code>value: String|Number</code>'
             },
@@ -145,11 +145,6 @@ export default [
             {
                 name: '<code>icon-right-click</code>',
                 description: 'Triggers when the right icon is clickable and have been clicked',
-                parameters: '<code>event: $event</code>'
-            },
-            {
-                name: '<code>[any].native</code>',
-                description: 'Listen to any native event, e.g. <code>click.native</code>',
                 parameters: '<code>event: $event</code>'
             }
         ],

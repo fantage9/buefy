@@ -103,14 +103,14 @@ export default [
             },
             {
                 name: '<code>active</code>',
-                description: 'Item is active, use the .sync modifier to make it two-way binding',
+                description: 'Item is active, use the <code>v-model</code> modifier to make it two-way binding',
                 type: 'Boolean',
                 values: '-',
                 default: 'false'
             },
             {
                 name: '<code>expanded</code>',
-                description: 'Item is expanded when <code>default</code> contains menu items, use the .sync modifier to make it two-way binding',
+                description: 'Item is expanded when <code>default</code> contains menu items, use the <code>v-model</code> modifier to make it two-way binding',
                 type: 'Boolean',
                 values: '-',
                 default: 'false'

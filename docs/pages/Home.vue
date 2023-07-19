@@ -11,22 +11,22 @@
                         <strong>Lightweight</strong> UI components for <strong><a href="https://vuejs.org/" target="_blank">Vue.js</a></strong>
                         based on <strong><a href="http://bulma.io/" target="_blank">Bulma</a></strong>
                     </h2>
-                    <pre class="npm home-hero"><code><span class="is-unselectable">$ </span>npm install buefy</code></pre>
+                    <pre class="npm home-hero"><code><span class="is-unselectable">$ </span>npm install @fantage9/buefy-vue3</code></pre>
 
                     <div class="github-button home-hero">
-                        <iframe
+                        <!-- <iframe
                             src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=star&count=true&size=large"
                             frameborder="0"
                             scrolling="0"
                             width="160px"
-                            height="30px"/>
+                            height="30px"/> -->
 
-                        <iframe
+                        <!-- <iframe
                             src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=fork&count=false&size=large"
                             frameborder="0"
                             scrolling="0"
                             width="80px"
-                            height="30px"/>
+                            height="30px"/> -->
                     </div>
 
                     <div class="buttons">
@@ -35,11 +35,11 @@
                             to="/documentation/start">
                             Get started
                         </router-link>
-                        <a class="button is-medium is-primary home-hero"
+                        <!-- <a class="button is-medium is-primary home-hero"
                            href="https://github.com/buefy/buefy/releases"
                            target="_blank">
                             Changelog
-                        </a>
+                        </a> -->
                     </div>
                     <small class="home-hero">v{{ version }}</small>
                 </div>
@@ -53,7 +53,7 @@
                         <div class="column has-text-centered features">
                             <b-icon icon="github-circle" size="is-large"/>
                             <p class="title is-4"><strong>Free</strong></p>
-                            <p class="subtitle">Open source on <strong><a href="https://github.com/buefy/buefy" target="_blank">GitHub</a></strong></p>
+                            <p class="subtitle">Open source on <strong><a href="https://github.com/fantage9/buefy" target="_blank">GitHub</a></strong></p>
                         </div>
                         <div class="column has-text-centered features">
                             <b-icon icon="cellphone-link" size="is-large"/>
@@ -78,7 +78,7 @@
             </div>
         </section>
 
-        <section class="hero is-light">
+        <!-- <section class="hero is-light">
             <div class="hero-body">
                 <div class="container" v-if="sponsors && sponsors.length">
                     <p class="content is-size-5 has-text-left">
@@ -141,7 +141,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <TheFooter/>
     </section>

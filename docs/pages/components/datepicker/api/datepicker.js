@@ -337,7 +337,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when the value of datepicker is changed',
                 parameters: '<code>value: Date</code>'
             },

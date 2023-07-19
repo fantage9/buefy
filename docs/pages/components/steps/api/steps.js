@@ -149,7 +149,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when active step is changed',
                 parameters: '<code>value: String|Number</code>'
             }

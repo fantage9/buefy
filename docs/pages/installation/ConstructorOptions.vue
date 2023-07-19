@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="block">
-            <CodeView title="Full bundle" :code="usageBundle | pre" lang="javascript" expanded/>
+            <CodeView title="Full bundle" :code="usageBundle || pre" lang="javascript" expanded/>
         </div>
 
         <div class="block">
-            <CodeView title="Individual components" :code="usageComponents | pre" lang="javascript" expanded/>
+            <CodeView title="Individual components" :code="usageComponents || pre" lang="javascript" expanded/>
         </div>
 
         <ApiView :data="api"/>
@@ -20,15 +20,15 @@
             return {
                 api,
                 usageBundle: `
-                Vue.use(Buefy, {
+                app.use(Buefy, {
                     defaultIconPack: 'fas',
                     // ...
                 })`,
                 usageComponents: `
-                import { ConfigProgrammatic, Table, Input } from 'buefy'
+                import { ConfigProgrammatic, Table, Input } from '@fantage9/buefy-vue3'
 
-                Vue.use(Table)
-                Vue.use(Input)
+                app.use(Table)
+                app.use(Input)
                 ConfigProgrammatic.setOptions({
                     defaultIconPack: 'fas',
                     // ...

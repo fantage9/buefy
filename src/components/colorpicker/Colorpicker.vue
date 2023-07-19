@@ -38,7 +38,7 @@
             >
                 <div>
                     <header class="colorpicker-header">
-                        <template v-if="$slots.header !== undefined && $slots.header.length">
+                        <template v-if="$slots.header !== undefined && $slots.header().length">
                             <slot name="header" />
                         </template>
                     </header>

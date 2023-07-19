@@ -91,9 +91,13 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when the file list is changed',
                 parameters: '<code>value: File</code> or <code>File[]</code>'
+            },
+            {
+                name: '<code>invalid</code>',
+                description: 'Triggers when mime type of the file is not valid to <code>accept</code>'
             }
         ],
         methods: [

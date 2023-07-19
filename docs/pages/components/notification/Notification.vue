@@ -75,7 +75,7 @@
                 ExAutoCloseWithProgressBarCode,
                 ExProgrammaticallyCode,
                 outsideVueInstance: `
-                    import { NotificationProgrammatic as Notification } from 'buefy'
+                    import { NotificationProgrammatic as Notification } from '@fantage9/buefy-vue3'
                     Notification.open('Notify!')
                 `
             }

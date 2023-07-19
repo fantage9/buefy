@@ -13,9 +13,9 @@
 
                         <router-view />
 
-                        <template v-if="meta.githubPath">
+                        <!-- <template v-if="meta.githubPath">
                             <ImproveThis v-bind="meta" />
-                        </template>
+                        </template> -->
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ import TheHeader from '@/components/TheHeader'
 import TheNavbar from '@/components/TheNavbar'
 import TheFooter from '@/components/TheFooter'
 import TheSidebar from '@/components/TheSidebar'
-import ImproveThis from '@/components/ImproveThis'
+// import ImproveThis from '@/components/ImproveThis'
 import menuData from '@/data/menu'
 
 export default {
@@ -38,8 +38,8 @@ export default {
         TheHeader,
         TheNavbar,
         TheFooter,
-        TheSidebar,
-        ImproveThis
+        TheSidebar
+        // ImproveThis
     },
     data() {
         return {

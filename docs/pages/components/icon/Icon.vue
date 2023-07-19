@@ -89,7 +89,7 @@
 
                 // ...
 
-                import Buefy from 'buefy'
+                import Buefy from '@fantage9/buefy-vue3'
                 Vue.use(Buefy, {
                   defaultIconComponent: 'vue-fontawesome',
                   defaultIconPack: 'fas',

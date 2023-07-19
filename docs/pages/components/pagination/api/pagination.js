@@ -31,8 +31,8 @@ export default [
                 default: '<code>1</code>'
             },
             {
-                name: '<code>current</code>',
-                description: 'Current page number, use the <code>.sync</code> modifier to make it two-way binding',
+                name: '<code>v-model</code>',
+                description: 'Current page number, use the <code>modelValue</code> property to make it one-way binding',
                 type: 'Number',
                 values: '—',
                 default: '<code>1</code>'

@@ -2,8 +2,8 @@ export default [
     {
         props: [
             {
-                name: '<code>active</code>',
-                description: 'Whether loading is active or not, use the <code>.sync</code> modifier to make it two-way binding',
+                name: '<code>v-model</code>',
+                description: 'Whether loading is active or not, use the <code>modelValue</code> property to make it one-way binding',
                 type: 'Boolean',
                 values: '—',
                 default: '<code>false</code>'

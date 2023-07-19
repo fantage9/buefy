@@ -1,8 +1,8 @@
 {
   "name": "@fantage9/buefy-vue3",
-  "version": "0.9.21-alpha.10",
-  "homepage": "https://buefy.org",
-  "description": "Lightweight UI components for Vue.js (v3) based on Bulma",
+  "version": "0.9.21-alpha.12",
+  "homepage": "https://dev7814.d2hmf3zpxuujqo.amplifyapp.com",
+  "description": "Lightweight UI components for Vue.js 3.0+ based on Bulma",
   "author": "Rafael Beraldo <rafael.pimpa@gmail.com>",
   "maintainers": [
     "Walter Tommasi <tommsi20@gmail.com>",
@@ -25,18 +25,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/buefy/buefy.git"
+    "url": "https://github.com/fantage9/buefy"
   },
   "bugs": {
-    "url": "https://github.com/buefy/buefy/issues"
+    "url": "https://github.com/fantage9/buefy/issues"
   },
   "vetur": {
     "tags": "dist/vetur/tags.json",
     "attributes": "dist/vetur/attributes.json"
   },
   "scripts": {
-    "dev": "node --openssl-legacy-provider build/dev-server.js",
-    "start": "node --openssl-legacy-provider build/dev-server.js",
+    "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
     "lint": "eslint --ext .js,.vue src docs",
     "lint:fix": "eslint --ext .js,.vue src docs --fix",
     "lint:staged": "lint-staged",

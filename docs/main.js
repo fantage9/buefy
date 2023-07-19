@@ -69,7 +69,7 @@ vueApp.component('Example', Example)
 
 vueApp.directive('highlight', {
     deep: true,
-    bind(el, binding) {
+    mounted(el, binding) {
         // On first bind, highlight all targets
         const targets = el.querySelectorAll('code')
         for (const target of targets) {
@@ -81,7 +81,7 @@ vueApp.directive('highlight', {
             hljs.highlightBlock(target)
         }
     },
-    componentUpdated(el, binding) {
+    updated(el, binding) {
         // After an update, re-fill the content and then highlight
         const targets = el.querySelectorAll('code')
         for (const target of targets) {

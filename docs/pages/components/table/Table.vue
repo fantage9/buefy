@@ -12,7 +12,7 @@
         <Example :component="ExSelection" :code="ExSelectionCode" title="Selection">
             <p>
                 You can show a <strong>single selected</strong> row by passing the corresponding object to the <code>selected</code> prop.
-                Additionally, adding the <code>.sync</code> modifier will make it two-way binding — selected object will mutate if user clicks on row.
+                Additionally, adding the <code>v-model</code> modifier will make it two-way binding — selected object will mutate if user clicks on row.
             </p>
             <p>Use <code>focusable</code> prop make table to be focused and navigable with a keyboard using <strong>arrow keys</strong>.</p>
         </Example>
@@ -21,7 +21,7 @@
             <p>You can add checkboxes to rows by using the <code>checkable</code> prop.</p>
             <p>
                 To show which rows are <strong>checked</strong>, you have to pass the corresponding object array to the <code>checked-rows</code> prop.
-                Adding the <code>.sync</code> modifier will make it two-way binding — checked object array will mutate if user clicks on checkboxes.
+                Adding the <code>v-model</code> modifier will make it two-way binding — checked object array will mutate if user clicks on checkboxes.
             </p>
             <p>A slot called <code>bottom-left</code> is available whenever the table is checkable or paginated, you can add anything in there.</p>
         </Example>

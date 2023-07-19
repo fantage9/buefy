@@ -44,7 +44,7 @@
                 ExPromptDialog,
                 ExPromptDialogCode,
                 outsideVueInstance: `
-                import { DialogProgrammatic as Dialog } from 'buefy'
+                import { DialogProgrammatic as Dialog } from '@fantage9/buefy-vue3'
                 Dialog.alert('We can use confirm and prompt methods as well')`,
                 promise: `
                 const { result, dialog } = await this.$buefy.dialog.confirm({

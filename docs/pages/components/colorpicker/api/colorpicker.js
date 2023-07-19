@@ -119,7 +119,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when the value of colorpicker is changed',
                 parameters: '<code>value: Color</code>'
             },

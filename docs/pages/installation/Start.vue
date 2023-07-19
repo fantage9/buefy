@@ -22,7 +22,7 @@
 
         <b-message type="is-warning" size="is-medium">
             For any installation and usage method, you need
-            <strong><a href="https://vuejs.org" target="_blank">Vue.js</a> version 2.6+</strong>.
+            <strong><a href="https://vuejs.org" target="_blank">Vue.js</a> version 3.0+</strong>.
         </b-message>
 
         <div class="media">
@@ -36,7 +36,7 @@
                 <p class="title">NPM or Yarn <em>(recommended)</em></p>
                 <p class="subtitle is-spaced">After creating a project with vue-cli or custom-made (usually Webpack)</p>
                 <p class="title is-4">Installation</p>
-                <CodeView code="npm install buefy" lang="bash" expanded/>
+                <CodeView code="npm install @fantage9/buefy-vue3" lang="bash" expanded/>
 
                 <hr>
 
@@ -51,60 +51,11 @@
                         </ul>
                     </div>
                 </b-message>
-                <CodeView title="Full bundle" :code="importingBundle | pre" lang="javascript" expanded/>
-                <CodeView title="Individual components as Vue plugins" :code="importingComponentsAsVuePlugins | pre" lang="javascript" expanded/>
+                <CodeView title="Full bundle" :code="importingBundle || pre" lang="javascript" expanded/>
+                <CodeView title="Individual components as Vue plugins" :code="importingComponentsAsVuePlugins || pre" lang="javascript" expanded/>
                 <b-message type="is-info">
                     To include individual styles, see <router-link to="/documentation/customization">Customization</router-link> section.
                 </b-message>
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="media-left">
-                <p :id="slugifyTitle('Standalone')" class="title">
-                    <router-link :to="`#${slugifyTitle('Standalone')}`">#</router-link>
-                    2
-                </p>
-            </div>
-            <div class="media-content">
-                <p class="title">Standalone</p>
-                <p class="subtitle is-spaced">Using CDN or downloading files to serve local</p>
-                <p class="title is-4">Installation</p>
-                <div class="content">
-                    <p>Just download or use these as CDN:</p>
-                    <ul>
-                        <li>Script: <a href="https://unpkg.com/buefy/dist/buefy.min.js" target="_blank">https://unpkg.com/buefy/dist/buefy.min.js</a></li>
-                        <li>Style: <a href="https://unpkg.com/buefy/dist/buefy.min.css" target="_blank">https://unpkg.com/buefy/dist/buefy.min.css</a></li>
-                    </ul>
-                </div>
-
-                <hr>
-
-                <p class="title is-4">Usage example</p>
-                <CodeView :code="importingCDNHtml | pre" expanded/>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="media">
-            <div class="media-left">
-                <p :id="slugifyTitle('Nuxt.js')" class="title">
-                    <router-link :to="`#${slugifyTitle('Nuxt.js')}`">#</router-link>
-                    3
-                </p>
-            </div>
-            <div class="media-content">
-                <p class="title">Nuxt.js</p>
-                <p class="subtitle is-spaced">Using a Nuxt.js module to keep things easier</p>
-                <p class="title is-4">Installation</p>
-                <CodeView code="npm install nuxt-buefy" lang="bash" expanded/>
-
-                <p class="title is-4">Usage</p>
-                <p class="content">
-                    Add <a href="https://github.com/buefy/nuxt-buefy">nuxt-buefy</a> to modules section of <code>nuxt.config.js</code>:
-                </p>
-                <CodeView :code="importingNuxtBuefy | pre" lang="javascript" expanded/>
             </div>
         </div>
     </div>
@@ -115,72 +66,24 @@
         data() {
             return {
                 importingBundle: `
-                import Vue from 'vue'
-                import Buefy from 'buefy'
-                import 'buefy/dist/buefy.css'
+                import { createApp } from 'vue'
+                import Buefy from '@fantage9/buefy-vue3'
+                import '@fantage9/buefy-vue3/dist/buefy.css'
 
-                Vue.use(Buefy)
+                const app = createApp()
+
+                app.use(Buefy)
                 `,
                 importingComponentsAsVuePlugins: `
-                import Vue from 'vue'
-                import { Table, Input } from 'buefy'
-                import 'buefy/dist/buefy.css'
+                import { createApp } from 'vue'
+                import { Table, Input } from '@fantage9/buefy-vue3'
+                import '@fantage9/buefy-vue3/dist/buefy.css'
 
-                Vue.use(Table)
-                Vue.use(Input)
+                const app = createApp()
+
+                app.use(Table)
+                app.use(Input)
                 `,
-                importingSSR: `
-                import Vue from 'vue'
-                import Buefy from 'buefy'
-                import 'buefy/dist/buefy.css'
-
-                Vue.use(Buefy) `,
-                installNuxtBuefy: `
-                // with npm
-                npm install nuxt-buefy
-
-                // with yarn
-                yarn add nuxt-buefy
-                `,
-                importingNuxtBuefy: `
-                {
-                    modules: [
-                        // Simple usage
-                        'nuxt-buefy',
-
-                        // Or you can customize
-                        ['nuxt-buefy', { css: false, materialDesignIcons: false }],
-                    ]
-                }`,
-                importingCDNHtml: `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-                </head>
-
-                <body>
-                    <div id="app">
-                        <!-- Buefy components goes here -->
-                    </div>
-
-                    <script src="https://unpkg.com/vue@2"></\script>
-                    <!-- Full bundle -->
-                    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></\script>
-
-                    <!-- Individual components -->
-                    <script src="https://unpkg.com/buefy/dist/components/table"></\script>
-                    <script src="https://unpkg.com/buefy/dist/components/input"></\script>
-
-                    <script>
-                        new Vue({
-                            el: '#app'
-                        })
-                    </\script>
-                </body>
-                </html>`,
                 materialIcons: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">',
                 fontAwesome5: '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">'
             }

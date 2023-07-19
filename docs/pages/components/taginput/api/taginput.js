@@ -238,7 +238,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when tags are added/removed',
                 parameters: '<code>value: Array</code>'
             },

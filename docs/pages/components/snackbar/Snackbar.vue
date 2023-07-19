@@ -34,7 +34,7 @@
                 ExSimple,
                 ExSimpleCode,
                 outsideVueInstance: `
-                import { SnackbarProgrammatic as Snackbar } from 'buefy'
+                import { SnackbarProgrammatic as Snackbar } from '@fantage9/buefy-vue3'
                 Snackbar.open('Look at me!')`
             }
         },

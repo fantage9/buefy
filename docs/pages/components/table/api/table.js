@@ -67,14 +67,14 @@ export default [
             },
             {
                 name: '<code>selected</code>',
-                description: 'Set which row is selected, use the <code>.sync</code> modifier to make it two-way binding',
+                description: 'Set which row is selected, use the <code>v-model</code> modifier to make it two-way binding',
                 type: 'Object',
                 values: '—',
                 default: '—'
             },
             {
                 name: '<code>focusable</code>',
-                description: 'Table can be focused and user can navigate with keyboard arrows (require <code>selected.sync</code>) and rows are highlighted when hovering',
+                description: 'Table can be focused and user can navigate with keyboard arrows (require <code>v-model:selected</code>) and rows are highlighted when hovering',
                 type: 'Boolean',
                 values: '—',
                 default: '<code>false</code>'
@@ -109,7 +109,7 @@ export default [
             },
             {
                 name: '<code>checked-rows</code>',
-                description: 'Set which rows are checked, use the <code>.sync</code> modifier to make it two-way binding',
+                description: 'Set which rows are checked, use the <code>v-model</code> modifier to make it two-way binding',
                 type: 'Array<Object>',
                 values: '—',
                 default: '—'

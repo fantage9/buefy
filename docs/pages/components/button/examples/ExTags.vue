@@ -4,7 +4,7 @@
             <b-button>Button</b-button>
 
             <b-button tag="a"
-                href="https://buefy.org"
+                href="https://dev7814.d2hmf3zpxuujqo.amplifyapp.com/"
                 target="_blank">
                 Anchor
             </b-button>

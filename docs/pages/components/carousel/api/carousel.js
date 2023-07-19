@@ -229,7 +229,7 @@ export default [
                 parameters: '<code>value: Boolean</code>, <code>value: String</code>'
             },
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when <code>indicator-mode</code> value is changed',
                 parameters: '<code>value: Boolean</code>, <code>value: String</code>'
             },

@@ -2,8 +2,8 @@ export default [
     {
         props: [
             {
-                name: '<code>open</code>',
-                description: 'Whether collapse is open or not, use the .sync modifier to make it two-way binding',
+                name: '<code>v-model</code>',
+                description: 'Whether collapse is open or not, use the <code>modelValue</code> property to make it one-way binding',
                 type: 'Boolean',
                 values: '—',
                 default: '<code>true</code>'

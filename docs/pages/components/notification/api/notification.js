@@ -3,7 +3,7 @@ export default [
         props: [
             {
                 name: '<code>v-model</code>',
-                description: 'Active state - set on `true` to reopen after close',
+                description: 'Whether notification is active or not, use the <code>modelValue</code> property to make it one-way binding',
                 type: 'Boolean',
                 values: '—',
                 default: 'true'
@@ -17,13 +17,6 @@ export default [
                     <code>is-warning</code>, <code>is-danger</code>,
                     and any other colors you've set in the <code>$colors</code> list on Sass`,
                 default: '—'
-            },
-            {
-                name: '<code>active</code>',
-                description: 'Whether notification is active or not, use the <code>.sync</code> modifier to make it two-way binding',
-                type: 'Boolean',
-                values: '—',
-                default: '<code>true</code>'
             },
             {
                 name: '<code>closable</code>',

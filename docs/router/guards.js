@@ -1,6 +1,6 @@
 export const afterEachGlobal = (vueApp, to, from) => {
     const title = to.meta.path === '/' ? to.meta.title : `${to.meta.title} | Buefy`
-    const url = `https://buefy.org${to.meta.path}`
+    const url = `https://dev7814.d2hmf3zpxuujqo.amplifyapp.com${to.meta.path}`
     const description = to.meta.subtitle.replace(/<(.|\n)*?>/g, '')
     const updates = [
         { tag: 'meta[name="twitter:title"]', value: title },

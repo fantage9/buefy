@@ -26,14 +26,14 @@
                 <a
                     class="navbar-item"
                     :class="{ 'has-text-dark': !light }"
-                    href="https://github.com/buefy/buefy"
+                    href="https://github.com/fantage9/buefy"
                     target="_blank"
                     title="Github"
                 >
                     <b-icon icon="github-circle" />
                 </a>
 
-                <a
+                <!-- <a
                     class="navbar-item"
                     :class="{ 'has-text-discord': !light }"
                     href="https://discordapp.com/invite/ZkdFJMr"
@@ -51,7 +51,7 @@
                     title="Twitter"
                 >
                     <b-icon icon="twitter" />
-                </a>
+                </a> -->
 
                 <span
                     class="navbar-burger burger"

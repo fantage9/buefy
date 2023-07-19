@@ -44,17 +44,10 @@ Please refer to [CHANGELOG.md](./CHANGELOG.md#0921-vue3-2) for more details.
 To install this fork, please run the following command,
 
 ```sh
-npm install 'https://github.com/kikuomax/buefy.git'
+npm install @fantage9/buefy-vue3
 ```
 
 The latest version is tagged `v0.9.21-vue3-2`.
-
-
-If you need the previous version that is based on Buefy v0.9.7, please run the following command,
-
-```sh
-npm install 'https://github.com/kikuomax/buefy.git#v0.9.7-vue3-1'
-```
 
 ## Features
 
@@ -70,7 +63,7 @@ npm install 'https://github.com/kikuomax/buefy.git#v0.9.7-vue3-1'
 
 The documentation is in the docs directory, it serves as the demo as well.
 
-Browse [online documentation here](https://buefy.org/).
+Browse [online documentation here](https://dev7814.d2hmf3zpxuujqo.amplifyapp.com/).
 
 ## Quick start
 
@@ -79,7 +72,7 @@ You need [Vue.js](https://vuejs.org/) **version 3.0+**. (Vue 2 is not supported)
 ### 1 Install via npm
 
 ```bash
-npm install 'https://github.com/kikuomax/buefy.git'
+npm install @fantage9/buefy-vue3
 ```
 
 ### 2 Import and use Buefy
@@ -87,8 +80,8 @@ npm install 'https://github.com/kikuomax/buefy.git'
 Bundle
 ```javascript
 import { createApp } from 'vue';
-import Buefy from 'buefy';
-import 'buefy/dist/buefy.css';
+import Buefy from '@fantage9/buefy-vue3';
+import '@fantage9/buefy-vue3/dist/buefy.css';
 
 const app = createApp();
 
@@ -99,7 +92,7 @@ or Individual Components
 ```javascript
 
 import { createApp } from 'vue'
-import { Field, Input } from 'buefy'
+import { Field, Input } from '@fantage9/buefy-vue3'
 import 'buefy/dist/buefy.css'
 
 const app = createApp();
@@ -116,16 +109,6 @@ app.use(Input)
 ```
 
 If you want to customize the icons or the theme, refer to the [customization section on the documentation](https://buefy.org/documentation/customization).
-
-### Alternatively, you can use a CDN or even download
-
-```html
-<!-- Buefy CSS -->
-<link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-
-<!-- Buefy JavaScript -->
-<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
-```
 
 ## Browser support
 

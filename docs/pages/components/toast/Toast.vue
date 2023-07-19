@@ -33,7 +33,7 @@
                 ExSimple,
                 ExSimpleCode,
                 outsideVueInstance: `
-                import { ToastProgrammatic as Toast } from 'buefy'
+                import { ToastProgrammatic as Toast } from '@fantage9/buefy-vue3'
                 Toast.open('Toasty!')`
             }
         },

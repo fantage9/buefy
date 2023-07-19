@@ -3,8 +3,8 @@ export default [
       title: 'Sidebar',
       props: [
             {
-                name: '<code>open</code>',
-                description: 'To control the behaviour of the sidebar programmatically, use the <code>.sync</code> modifier to make it two-way binding',
+                name: '<code>v-model</code>',
+                description: 'To control the behaviour of the sidebar programmatically, use the <code>modelValue</code> property to make it one-way binding',
                 type: 'Boolean',
                 values: '—',
                 default: '<code>false</code>'

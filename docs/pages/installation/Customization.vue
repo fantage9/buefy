@@ -6,8 +6,8 @@
             </div>
             <div class="media-content">
                 <h3 class="subtitle">Install Buefy via npm</h3>
-                <CodeView code="npm install buefy" lang="bash" expanded/>
-                <p class="content">Or clone the repository: <a href="https://github.com/buefy/buefy" target="_blank">https://github.com/buefy/buefy</a></p>
+                <CodeView code="npm install @fantage9/buefy-vue3" lang="bash" expanded/>
+                <p class="content">Or clone the repository: <a href="https://github.com/fantage9/buefy" target="_blank">https://github.com/fantage9/buefy</a></p>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
                     </div>
                 </b-message>
                 <div class="example is-paddingless">
-                    <CodeView :code="sass | pre" lang="sass" expanded/>
+                    <CodeView :code="sass || pre" lang="sass" expanded/>
                 </div>
 
             </div>
@@ -41,9 +41,9 @@
             <div class="media-content">
                 <h3 class="subtitle">Import and use Buefy</h3>
                 <b-message type="is-warning">
-                    Please note that <code class="javascript">import 'buefy/dist/buefy.css'</code> from the <router-link to="/documentation/start">start section</router-link> has been omitted.
+                    Please note that <code class="javascript">import '@fantage9/buefy-vue3/dist/buefy.css'</code> from the <router-link to="/documentation/start">start section</router-link> has been omitted.
                 </b-message>
-                <CodeView :code="importing | pre" lang="javascript" expanded/>
+                <CodeView :code="importing || pre" lang="javascript" expanded/>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
             return {
                 sass: `
                 // Import Bulma's core
-                @import "~bulma/sass/utilities/_all";
+                @import "bulma/sass/utilities/_all";
 
                 // Set your colors
                 $primary: #8c67ef;
@@ -134,14 +134,17 @@
                 $link-focus-border: $primary;
 
                 // Import Bulma and Buefy styles
-                @import "~bulma";
-                @import "~buefy/src/scss/buefy";
+                @import "bulma/bulma";
+                @import "@fantage9/buefy-vue3/src/scss/buefy";
                 `,
                 importing: `
-                import Vue from 'vue'
-                import Buefy from 'buefy'
+                import { createApp } from 'vue'
+                import Buefy from '@fantage9/buefy-vue3'
 
-                Vue.use(Buefy)`
+                const app = createApp()
+
+                app.use(Buefy)
+                `
             }
         }
     }

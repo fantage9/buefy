@@ -66,7 +66,7 @@
                 this.$buefy.modal.open(props)
 
                 // From outside Vue instance
-                import { ModalProgrammatic as Modal } from 'buefy'
+                import { ModalProgrammatic as Modal } from '@fantage9/buefy-vue3'
                 Modal.open(props)`
             }
         },

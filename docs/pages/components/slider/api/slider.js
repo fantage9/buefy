@@ -147,7 +147,7 @@ export default [
         ],
         events: [
             {
-                name: '<code>input</code>',
+                name: '<code>update:modelValue</code>',
                 description: 'Triggers when value is changed',
                 parameters: '<code>value: Number|Array</code>'
             },

@@ -109,7 +109,7 @@ export default [
             },
             {
                 name: '<code>max-height</code>',
-                description: 'Max height of dropdown content',
+                description: 'Max height of dropdown content (Only works when <code>scrollable</code> is <code>true</code>)',
                 type: 'String, Number',
                 values: '—',
                 default: '<code>200px</code>'

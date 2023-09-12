@@ -340,10 +340,8 @@ export default {
                 dropdownWrapper.classList.forEach((item) => dropdownWrapper.classList.remove(item))
                 dropdownWrapper.classList.add('dropdown')
                 dropdownWrapper.classList.add('dropdown-menu-animation')
-                // TODO: the following test never becomes true on Vue 3.
-                //       I have no idea about the intention of it.
-                if (this.$vnode && this.$vnode.data && this.$vnode.data.staticClass) {
-                    dropdownWrapper.classList.add(this.$vnode.data.staticClass)
+                if (this.$attrs.class) {
+                    dropdownWrapper.classList.add(this.$attrs.class)
                 }
                 this.rootClasses.forEach((item) => {
                     // skip position prop

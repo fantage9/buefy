@@ -114,6 +114,13 @@ export default [
                 default: '—'
             },
             {
+                name: '<code>filter</code>',
+                description: 'Transform input values on the fly.',
+                type: 'Function',
+                values: '—',
+                default: '<code>null</code>'
+            },
+            {
                 name: 'Any native attribute',
                 description: '—',
                 type: '—',

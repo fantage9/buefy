@@ -101,7 +101,11 @@ export default {
         },
         iconRight: String,
         iconRightClickable: Boolean,
-        iconRightType: String
+        iconRightType: String,
+        filter: {
+            type: Function,
+            default: null
+        }
     },
     emits: [
         'icon-click',
@@ -263,14 +267,28 @@ export default {
 
         onInput(event) {
             if (!this.lazy) {
-                const value = event.target.value
+                let value
+                if (this.filter) {
+                    value = this.filter(event.target.value)
+                    event.target.value = value
+                } else {
+                    value = event.target.value
+                }
+
                 this.updateValue(value)
             }
         },
 
         onChange(event) {
             if (this.lazy) {
-                const value = event.target.value
+                let value
+                if (this.filter) {
+                    value = this.filter(event.target.value)
+                    event.target.value = value
+                } else {
+                    value = event.target.value
+                }
+
                 this.updateValue(value)
             }
         },

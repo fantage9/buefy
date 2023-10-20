@@ -4,7 +4,7 @@
             <b-button>Button</b-button>
 
             <b-button tag="a"
-                href="https://dev7814.d2hmf3zpxuujqo.amplifyapp.com/"
+                href="https://vue-3.d2u327hy78ihgf.amplifyapp.com"
                 target="_blank">
                 Anchor
             </b-button>

@@ -28,6 +28,8 @@
 
         <Example :component="ExSizes" :code="ExSizesCode" title="Sizes" vertical/>
 
+        <Example :component="ExFilter" :code="ExFilterCode" title="Filter" vertical/>
+
         <ApiView :data="api"/>
         <VariablesView :data="variables"/>
     </div>
@@ -61,6 +63,9 @@
     import ExLazy from './examples/ExLazy'
     import ExLazyCode from '!!raw-loader!./examples/ExLazy'
 
+    import ExFilter from './examples/ExFilter'
+    import ExFilterCode from '!!raw-loader!./examples/ExFilter'
+
     export default {
         data() {
             return {
@@ -81,7 +86,9 @@
                 ExPasswordCode,
                 ExSizesCode,
                 ExLazy,
-                ExLazyCode
+                ExLazyCode,
+                ExFilter,
+                ExFilterCode
             }
         }
     }

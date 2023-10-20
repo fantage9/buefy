@@ -63,7 +63,7 @@ The latest version is tagged `v0.9.21-vue3-2`.
 
 The documentation is in the docs directory, it serves as the demo as well.
 
-Browse [online documentation here](https://dev7814.d2hmf3zpxuujqo.amplifyapp.com/).
+Browse [online documentation here](https://vue-3.d2u327hy78ihgf.amplifyapp.com).
 
 ## Quick start
 

@@ -28,7 +28,9 @@
 
         <Example :component="ExSizes" :code="ExSizesCode" title="Sizes" vertical/>
 
-        <Example :component="ExFilter" :code="ExFilterCode" title="Filter" vertical/>
+        <Example :component="ExFilter" :code="ExFilterCode" title="Filter" vertical>
+            <p>You could transform or restrict input values on the fly.</p>
+        </Example>
 
         <ApiView :data="api"/>
         <VariablesView :data="variables"/>

@@ -115,7 +115,7 @@ export default [
             },
             {
                 name: '<code>filter</code>',
-                description: 'Transform input values on the fly.',
+                description: 'Transform or restrict input values on the fly.',
                 type: 'Function',
                 values: '—',
                 default: '<code>null</code>'
